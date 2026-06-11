@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRIMARY TUG OF POINTS - CYBERPUNK EDITION</title>
+    <title>CKCPS WARS</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
+        
         :root {
             --primary: #00f9ff;
             --secondary: #ff00aa;
@@ -14,7 +14,7 @@
             --dark: #0a0a1f;
             --panel: #12122e;
         }
-
+        
         body {
             margin: 0; padding: 0;
             font-family: 'Press Start 2P', system-ui;
@@ -23,29 +23,29 @@
             text-align: center;
             overflow-x: hidden;
         }
-
+        
         header {
             background: #0a0a1f;
             padding: 20px;
             border-bottom: 4px solid var(--primary);
             box-shadow: 0 0 20px rgba(0, 249, 255, 0.3);
         }
-
+        
         h1 {
             margin: 0;
             font-size: clamp(26px, 6vw, 36px);
             text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 40px var(--secondary);
         }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 30px 20px;
+        
+        .container { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 30px 20px; 
         }
-
+        
         .screen { display: none; }
         .screen.active { display: block; }
-
+        
         button {
             font-family: 'Press Start 2P', system-ui;
             padding: 14px 28px; margin: 12px;
@@ -57,13 +57,13 @@
             text-shadow: 0 0 8px var(--primary);
             box-shadow: 0 0 15px rgba(0, 249, 255, 0.4);
         }
-        button:hover {
-            background: var(--primary);
-            color: #000;
+        button:hover { 
+            background: var(--primary); 
+            color: #000; 
             transform: scale(1.05);
             box-shadow: 0 0 25px var(--primary);
         }
-
+        
         .section {
             background: #12122e;
             padding: 25px;
@@ -72,23 +72,18 @@
             border: 3px solid var(--primary);
             box-shadow: 0 0 20px rgba(0, 249, 255, 0.2);
         }
-
+        
         .top-settings {
             display: grid;
             gap: 25px;
         }
-
+        
         @media (min-width: 900px) {
             .top-settings {
                 grid-template-columns: 1fr 1fr 1fr;
             }
         }
-
-        .game-settings {
-            border-color: var(--secondary);
-            box-shadow: 0 0 20px rgba(255, 0, 170, 0.2);
-        }
-
+        
         select, input[type="text"] {
             font-family: 'Press Start 2P', system-ui;
             padding: 14px;
@@ -99,13 +94,13 @@
             width: 100%;
             box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
         }
-
+        
         .score {
             font-size: 38px;
             color: var(--accent);
             text-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
         }
-
+        
         .question {
             background: #0a0a1f;
             padding: 30px;
@@ -120,7 +115,7 @@
             border: 2px solid var(--primary);
             box-shadow: 0 0 25px rgba(0, 249, 255, 0.3);
         }
-
+        
         .option-btn {
             padding: 18px 22px;
             font-size: clamp(16px, 2.5vw, 19px);
@@ -146,7 +141,7 @@
             border-color: #ff00aa;
             box-shadow: 0 0 20px #ff00aa;
         }
-
+        
         .leaderboard {
             background: #12122e;
             padding: 25px;
@@ -155,16 +150,16 @@
             box-shadow: 0 0 20px rgba(255, 0, 170, 0.3);
         }
 
-        /* ========== TEAM GRID - ALWAYS HORIZONTAL ========== */
+        /* Team Grid - Always Horizontal */
         .team-grid {
             display: flex;
-            flex-wrap: nowrap;           /* Never wrap to next line */
+            flex-wrap: nowrap;
             gap: 20px;
-            overflow-x: auto;            /* Allow horizontal scroll on very narrow screens */
+            overflow-x: auto;
             padding-bottom: 15px;
             -webkit-overflow-scrolling: touch;
         }
-
+        
         .team-card {
             background: #12122e;
             border: 5px solid #334155;
@@ -173,33 +168,31 @@
             position: relative;
             min-height: 420px;
             box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
-            flex: 1 1 280px;             /* Equal width, minimum 280px */
+            flex: 1 1 280px;
             min-width: 280px;
         }
-
-        .team-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 8px;
-        }
-
+        
         .progress-bar {
             background: linear-gradient(90deg, var(--accent), var(--primary));
             box-shadow: 0 0 15px var(--accent);
         }
 
-        .status {
-            font-size: 15px;
-            min-height: 30px;
+        /* New parallel layout for Game Settings + Question Source */
+        .bottom-row {
+            display: grid;
+            gap: 25px;
+        }
+        
+        @media (min-width: 900px) {
+            .bottom-row {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>🏴‍☠️ PRIMARY TUG OF POINTS 🏴‍☠️</h1>
+        <h1>🏴‍☠️ CKCPS WARS 🏴‍☠️</h1>
         <p style="margin:8px 0 0 0; font-size:15px; color:#00f9ff; text-shadow: 0 0 10px #00f9ff;">
             CYBERPUNK NEON EDITION • P.1–P.6
         </p>
@@ -208,8 +201,8 @@
     <div class="container">
         <!-- MENU SCREEN -->
         <div id="menu-screen" class="screen active">
-            <h2 style="margin: 20px 0 30px 0; color:#00f9ff; text-shadow: 0 0 15px #00f9ff;">NEW GAME</h2>
 
+            <!-- Top Settings: Teams / Subject / Level -->
             <div class="top-settings">
                 <div class="section">
                     <label style="color:#00f9ff;">NUMBER OF TEAMS</label><br>
@@ -242,50 +235,57 @@
                 </div>
             </div>
 
-            <div class="section game-settings">
-                <label style="color:#ff00aa;">GAME END CONDITION</label><br>
-                <select id="end-mode" onchange="toggleEndOptions()">
-                    <option value="score">First to Score</option>
-                    <option value="time">Timed Game</option>
-                </select><br><br>
+            <!-- Parallel Row: Game End Condition (Left) + Question Source (Right) -->
+            <div class="bottom-row">
 
-                <div id="score-options">
-                    <label style="color:#ff00aa;">TARGET SCORE TO WIN</label><br>
-                    <select id="target-score">
-                        <option value="50">50 points</option>
-                        <option value="80">80 points</option>
-                        <option value="100" selected>100 points</option>
-                        <option value="150">150 points</option>
-                        <option value="200">200 points</option>
-                    </select>
+                <!-- Game End Condition -->
+                <div class="section game-settings">
+                    <label style="color:#ff00aa;">GAME END CONDITION</label><br>
+                    <select id="end-mode" onchange="toggleEndOptions()">
+                        <option value="score">First to Score</option>
+                        <option value="time">Timed Game</option>
+                    </select><br><br>
+                    
+                    <div id="score-options">
+                        <label style="color:#ff00aa;">TARGET SCORE TO WIN</label><br>
+                        <select id="target-score">
+                            <option value="50">50 points</option>
+                            <option value="80">80 points</option>
+                            <option value="100" selected>100 points</option>
+                            <option value="150">150 points</option>
+                            <option value="200">200 points</option>
+                        </select>
+                    </div>
+                    
+                    <div id="time-options" style="display:none;">
+                        <label style="color:#ff00aa;">GAME DURATION</label><br>
+                        <select id="game-time">
+                            <option value="5">5 minutes</option>
+                            <option value="8">8 minutes</option>
+                            <option value="10" selected>10 minutes</option>
+                            <option value="15">15 minutes</option>
+                        </select>
+                    </div>
                 </div>
 
-                <div id="time-options" style="display:none;">
-                    <label style="color:#ff00aa;">GAME DURATION</label><br>
-                    <select id="game-time">
-                        <option value="5">5 minutes</option>
-                        <option value="8">8 minutes</option>
-                        <option value="10" selected>10 minutes</option>
-                        <option value="15">15 minutes</option>
-                    </select>
+                <!-- Question Source -->
+                <div class="section">
+                    <h3 style="margin:10px 0 20px 0; color:#39ff14; text-shadow: 0 0 15px #39ff14;">📂 QUESTION SOURCE</h3>
+                    
+                    <button onclick="document.getElementById('csv-upload').click()" style="width:100%; max-width:420px; border-color:#39ff14; box-shadow: 0 0 20px #39ff14;">
+                        📁 UPLOAD LOCAL CSV
+                    </button>
+                    <input type="file" id="csv-upload" accept=".csv" style="display:none;">
+                    
+                    <div style="margin:25px 0; color:#ff00aa;">— OR —</div>
+                    
+                    <label style="color:#39ff14;">GOOGLE DRIVE PUBLIC LINK</label><br>
+                    <input type="text" id="gdrive-link" placeholder="https://drive.google.com/file/d/XXXX/view">
+                    <button onclick="loadFromGoogleDrive()" style="width:100%; max-width:420px; background:#ff00aa; border-color:#ff00aa; box-shadow: 0 0 20px #ff00aa;">
+                        🔗 LOAD FROM GOOGLE DRIVE
+                    </button>
                 </div>
-            </div>
 
-            <div class="section">
-                <h3 style="margin:10px 0 20px 0; color:#39ff14; text-shadow: 0 0 15px #39ff14;">📂 QUESTION SOURCE</h3>
-
-                <button onclick="document.getElementById('csv-upload').click()" style="width:100%; max-width:420px; border-color:#39ff14; box-shadow: 0 0 20px #39ff14;">
-                    📁 UPLOAD LOCAL CSV
-                </button>
-                <input type="file" id="csv-upload" accept=".csv" style="display:none;">
-
-                <div style="margin:25px 0; color:#ff00aa;">— OR —</div>
-
-                <label style="color:#39ff14;">GOOGLE DRIVE PUBLIC LINK</label><br>
-                <input type="text" id="gdrive-link" placeholder="https://drive.google.com/file/d/XXXX/view">
-                <button onclick="loadFromGoogleDrive()" style="width:100%; max-width:420px; background:#ff00aa; border-color:#ff00aa; box-shadow: 0 0 20px #ff00aa;">
-                    🔗 LOAD FROM GOOGLE DRIVE
-                </button>
             </div>
 
             <button onclick="startGame()" style="font-size:26px; padding:26px 60px; margin-top:30px; border-color:#39ff14; box-shadow: 0 0 30px #39ff14;">
@@ -303,7 +303,6 @@
                 </div>
             </div>
 
-            <!-- Teams always stay in one horizontal row -->
             <div id="team-grid" class="team-grid"></div>
 
             <div class="leaderboard">
@@ -315,7 +314,7 @@
 
     <script>
         // ==================== FULL GAME SCRIPT ====================
-        let questionsDB = { /* Add your full default questions here */ };
+        let questionsDB = { /* Paste your full default questions here */ };
         let customQuestions = [];
         let currentSubject = '', currentLevel = '', teams = [], currentQuestions = [];
         let gameInterval = null, endMode = 'score', targetScore = 100, gameEndTime = null;
@@ -329,11 +328,11 @@
         async function loadFromGoogleDrive() {
             const link = document.getElementById('gdrive-link').value.trim();
             if (!link) return alert("Please paste a Google Drive link");
-
+            
             let fileId = '';
             if (link.includes('/file/d/')) fileId = link.split('/file/d/')[1].split('/')[0];
             else if (link.includes('id=')) fileId = link.split('id=')[1].split('&')[0];
-
+            
             if (!fileId) return alert("Invalid Google Drive link");
 
             const directUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
@@ -430,14 +429,14 @@
         }
 
         function getRandomQuestion() {
-            let pool = customQuestions.length > 0 ? customQuestions :
+            let pool = customQuestions.length > 0 ? customQuestions : 
                        (questionsDB[currentSubject] && questionsDB[currentSubject][currentLevel]) || [];
             if (pool.length === 0) return {q: "No questions available", options: ["A","B","C","D"], ans: 0};
 
             const original = pool[Math.floor(Math.random() * pool.length)];
             const shuffled = [...original.options];
             const correctText = shuffled[original.ans];
-
+            
             for (let i = shuffled.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
